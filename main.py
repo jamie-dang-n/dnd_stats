@@ -2,11 +2,11 @@ import PySimpleGUI as sg
 
 sg.theme('DarkAmber')    # Keep things interesting for your users
 
-layout = [[sg.Text('Persistent window')],      
+layout = [[sg.Text('Enter your class')],      
           [sg.Input(key='-IN-')],      
-          [sg.Button('Read'), sg.Exit()]]      
+          [sg.Button('Roll'), sg.Exit()]]      
 
-window = sg.Window('Window that stays open', layout)      
+window = sg.Window('DND Stat Roller', layout)      
 
 while True:                             # The Event Loop
     event, values = window.read() 

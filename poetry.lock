@@ -1,0 +1,18 @@
+[[package]]
+name = "pysimplegui"
+version = "4.55.1"
+description = "Python GUIs for Humans. Launched in 2018. It's 2021 & PySimpleGUI is an ACTIVE & supported project. Super-simple to create custom GUI's. 325+ Demo programs & Cookbook for rapid start. Extensive documentation. Main docs at www.PySimpleGUI.org. Fun & your success are the focus. Examples using Machine Learning (GUI, OpenCV Integration), Rainmeter Style Desktop Widgets, Matplotlib + Pyplot, PIL support, add GUI to command line scripts, PDF & Image Viewers. Great for beginners & advanced GUI programmers."
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "e2303f4e6b0d80c6ffe5f3b3034ce7e54adb65323b2e9e29ca9ac1a7629523dc"
+
+[metadata.files]
+pysimplegui = [
+    {file = "PySimpleGUI-4.55.1-py3-none-any.whl", hash = "sha256:dac8a7d43c246c68bb3c6cdabb0b0abb369df8a7bf3f246d6144e64b6e9330b4"},
+    {file = "PySimpleGUI-4.55.1.tar.gz", hash = "sha256:9d40c0a0c2b4c3d2ee935854e48d724f508ae68123f4bac8072612dd9e707dec"},
+]
