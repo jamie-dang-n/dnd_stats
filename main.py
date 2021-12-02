@@ -28,9 +28,19 @@ def total_stats():
     total_stats.sort(reverse=True)
   return total_stats
 
+def suggestion(character_class, total_stats):
+  if character_class == "Barbarian" or character_class == "barbarian":
+    strength = "Strength: " + str(total_stats[1])
+    constitution = "Constitution: " + str(total_stats[0])
+    barbarian_string = ("The barbarian benefits aplenty from high constitution, and good strength." + 
+    constitution + 
+    strength + 
+    "The rest of the scores may go wherever you please.")
+    return barbarian_string
+
 sg.theme('DarkAmber')    # Keep things interesting for your users
 
-layout = [[sg.Text('Enter your class', key='-CHARCLASS-')],      
+layout = [[sg.Text('Enter your class')],      
           [sg.Input(key='-IN-')],    
           [sg.Text(key='-OUTPUT-')],
           [sg.Text(key='-CLASSOUT-')],  
@@ -46,7 +56,7 @@ while True:                             # The Event Loop
     if event == 'Roll':
       final_stats = total_stats()
       window['-OUTPUT-'].update(final_stats)
-      # if values['-CHARCLASS-'] == "bard":
-      #   window['-CLASSOUT-'].update()
+      character_class = values['-IN-']
+      window['-CLASSOUT-'].update(suggestion(character_class, final_stats))
 
 window.close()
