@@ -32,10 +32,7 @@ def suggestion(character_class, total_stats):
   if character_class == "Barbarian" or character_class == "barbarian":
     strength = "Strength: " + str(total_stats[1])
     constitution = "Constitution: " + str(total_stats[0])
-    barbarian_string = ("The barbarian benefits aplenty from high constitution, and good strength." + 
-    constitution + 
-    strength + 
-    "The rest of the scores may go wherever you please.")
+    barbarian_string = ['The barbarian benefits aplenty from high constitution, and good strength.', constitution, strength, 'The rest of the scores may go wherever you please.', str(total_stats[2:])]
     return barbarian_string
 
 sg.theme('DarkAmber')    # Keep things interesting for your users
@@ -43,7 +40,11 @@ sg.theme('DarkAmber')    # Keep things interesting for your users
 layout = [[sg.Text('Enter your class')],      
           [sg.Input(key='-IN-')],    
           [sg.Text(key='-OUTPUT-')],
-          [sg.Text(key='-CLASSOUT-')],  
+          [sg.Text(key='-CLASSOUTFIRST-')],
+          [sg.Text(key='-CLASSOUTSEC-')],
+          [sg.Text(key='-CLASSOUTTHIRD-')], 
+          [sg.Text(key='-CLASSOUTFOUR-')],
+          [sg.Text(key='-CLASSOUTFIVE-')], 
           [sg.Button('Roll'), sg.Exit()]]      
 
 window = sg.Window('DND Stat Roller', layout)      
@@ -57,6 +58,11 @@ while True:                             # The Event Loop
       final_stats = total_stats()
       window['-OUTPUT-'].update(final_stats)
       character_class = values['-IN-']
-      window['-CLASSOUT-'].update(suggestion(character_class, final_stats))
+      suggest = suggestion(character_class, final_stats)
+      window['-CLASSOUTFIRST-'].update(suggest[0])
+      window['-CLASSOUTSEC-'].update(suggest[1])
+      window['-CLASSOUTTHIRD-'].update(suggest[2])
+      window['-CLASSOUTFOUR-'].update(suggest[3])
+      window['-CLASSOUTFIVE-'].update(suggest[4])
 
 window.close()
