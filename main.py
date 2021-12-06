@@ -29,17 +29,17 @@ def total_stats():
   return total_stats
 
 def suggestion(character_class, total_stats):
-  if character_class == "Barbarian" or character_class == "barbarian":
+  if character_class == "Barbarian":
     strength = "Strength: " + str(total_stats[1])
     constitution = "Constitution: " + str(total_stats[0])
     barbarian_string = ['The barbarian benefits aplenty from high constitution, and good strength.', constitution, strength, 'The rest of the scores may go wherever you please.', str(total_stats[2:])]
     return barbarian_string
-  elif character_class == "Bard" or character_class == "bard":
+  elif character_class == "Bard":
     charisma = "Charisma: " + str(total_stats[0])
     intelligence = "Intelligence: " + str(total_stats[1])
     bard_string = ['The bard benefits aplenty from high charisma, and good intelligence.', charisma, intelligence, 'The rest of the scores may go wherever you please.', str(total_stats[2:])]
     return bard_string
-  elif character_class == "Cleric" or character_class == "cleric":
+  elif character_class == "Cleric":
     wisdom = "Wisdom: " + str(total_stats[0])
     charisma = "Charisma: " + str(total_stats[1])
     cleric_string = ['The cleric benefits aplenty from high wisdom, and good charisma.', wisdom, charisma, 'The rest of the scores may go wherever you please.', str(total_stats[2:])]
@@ -47,9 +47,9 @@ def suggestion(character_class, total_stats):
 
 sg.theme('DarkAmber')    # Keep things interesting for your users
 
-layout = [[sg.Text('Enter your class')],      
-          [sg.Input(key='-IN-')],    
-          [sg.Text('Available classes are bard, barbarian, and cleric', key='-OUTPUT-')],
+layout = [[sg.Text('Select your class', size=(60, 1))],      
+          [sg.Combo(['Bard','Cleric','Barbarian', 'Druid','Fighter','Monk','Paladin','Ranger', 'Rogue'],default_value='Bard',key='-IN-')],    
+          [sg.Text(key='-OUTPUT-')],
           [sg.Text( key='-CLASSOUTFIRST-')],
           [sg.Text(key='-CLASSOUTSEC-')],
           [sg.Text(key='-CLASSOUTTHIRD-')], 
