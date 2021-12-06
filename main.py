@@ -30,8 +30,8 @@ def total_stats():
 
 def suggestion(character_class, total_stats):
   if character_class == "Barbarian":
-    first = "Strength: " + str(total_stats[1])
-    second = "Constitution: " + str(total_stats[0])
+    first = "Strength: " + str(total_stats[0])
+    second = "Constitution: " + str(total_stats[1])
     class_string = ['The barbarian benefits aplenty from high constitution, and good strength.', first, second, 'The rest of the scores may go wherever you please.', str(total_stats[2:])]
     return class_string
   elif character_class == "Bard":
