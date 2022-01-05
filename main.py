@@ -79,7 +79,7 @@ sg.theme('DarkAmber')    # Keep things interesting for your users
 
 layout = [[sg.Text('Select your class', size=(60, 1))],      
           [sg.Combo(['Bard','Cleric','Barbarian', 'Druid','Fighter','Monk','Paladin','Ranger', 'Rogue'],default_value='Bard',key='-IN-')],    
-          [sg.Text(key='-OUTPUT-')],
+          [sg.Text('Your Stat Scores:'),sg.Text(key='-OUTPUT-')],
           [sg.Text( key='-CLASSOUTFIRST-')],
           [sg.Text(key='-CLASSOUTSEC-')],
           [sg.Text(key='-CLASSOUTTHIRD-')], 
