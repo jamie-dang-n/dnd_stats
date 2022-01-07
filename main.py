@@ -1,6 +1,8 @@
 import PySimpleGUI as sg      
 import random
 
+#Functions
+#defining the stat rolling function; individual scores
 def roll_stat():
   #rolling the dice
   min = 1
@@ -21,6 +23,7 @@ def roll_stat():
 
   return total
 
+#compiling scores into sets of 6
 def total_stats():
   total_stats = []
   for i in range(6):
@@ -28,6 +31,7 @@ def total_stats():
     total_stats.sort(reverse=True)
   return total_stats
 
+#output; gives suggestions on where to put scores and updates text
 def suggestion(character_class, total_stats):
   if character_class == "Barbarian":
     first = "Strength: " + str(total_stats[0])
@@ -75,7 +79,8 @@ def suggestion(character_class, total_stats):
     class_string = ['The rogue benefits aplenty from high dexterity, and good charisma.', first, second, 'The rest of the scores may go wherever you please.', str(total_stats[2:])]
     return class_string
 
-sg.theme('DarkAmber')    # Keep things interesting for your users
+#GUI Layout
+sg.theme('DarkAmber')    
 
 layout = [[sg.Text('Select your class', size=(60, 1))],      
           [sg.Combo(['Bard','Cleric','Barbarian', 'Druid','Fighter','Monk','Paladin','Ranger', 'Rogue'],default_value='Bard',key='-IN-')],    
