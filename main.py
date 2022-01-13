@@ -16,7 +16,8 @@ layout = [[sg.Text('Select your class', size=(60, 1))],
 
 window = sg.Window('DND Stat Roller', layout)      
 
-while True:                             # The Event Loop
+while True:                             
+  # The Event Loop
     event, values = window.read() 
     print(event, values)       
     if event == sg.WIN_CLOSED or event == 'Exit':
